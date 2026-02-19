@@ -10,7 +10,7 @@ const Services: React.FC = () => {
     <div className="bg-mesh pt-32 pb-16 lg:pt-20">
       <SEO
         title="Our Services | OralCare Dental Clinic Chennai"
-        description="Explore our full range of dental services in Chennai — general dentistry, cosmetic dentistry, dental implants, and smile design & whitening by Dr. Sivaranjani."
+        description="Explore our full range of dental services in Chennai — general dentistry, cosmetic dentistry, dental implants, and smile design & whitening by Dr. Olivia Martinez."
       />
       <section className="py-12 lg:py-24">
         <div className="container mx-auto px-6">

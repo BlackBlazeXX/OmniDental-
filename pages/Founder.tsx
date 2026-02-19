@@ -77,7 +77,7 @@ const Founder: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             <div className="text-center lg:text-left">
               <h3 className="text-3xl lg:text-4xl font-serif mb-6 lg:mb-8 text-textPrimary">Area of Expertise</h3>
-              <p className="text-textPrimary/50 mb-10 lg:mb-12 text-base lg:text-lg font-light leading-relaxed">Dr. Sivaranjani leads our clinical team with a focus on advanced restorative techniques and complex aesthetic cases.</p>
+              <p className="text-textPrimary/50 mb-10 lg:mb-12 text-base lg:text-lg font-light leading-relaxed">Dr. Olivia Martinez leads our clinical team with a focus on advanced restorative techniques and complex aesthetic cases.</p>
 
               <div className="space-y-4 lg:space-y-6">
                 {FOUNDER_BIO.specialties.map((spec, i) => (
@@ -105,10 +105,10 @@ const Founder: React.FC = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-serif mb-4 text-textPrimary">The Supporting Specialists</h2>
-            <p className="text-textPrimary/40 font-light">Under Dr. Sivaranjani's leadership, our team of experts ensures seamless care.</p>
+            <p className="text-textPrimary/40 font-light">Under Dr. Olivia Martinez's leadership, our team of experts ensures seamless care.</p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 max-w-5xl mx-auto">
-            {TEAM_DATA.filter(m => m.id !== 'dr-sivaranjani').map(member => (
+            {TEAM_DATA.filter(m => m.id !== 'dr-olivia-martinez').map(member => (
               <div key={member.id} className="text-center group">
                 <div className="aspect-square rounded-[2rem] lg:rounded-[2.5rem] overflow-hidden mb-6 relative max-w-[280px] mx-auto">
                   <img src={member.image} className="w-full h-full object-cover grayscale transition-all group-hover:grayscale-0 duration-700" alt={member.name} loading="lazy" />

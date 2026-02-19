@@ -8,7 +8,7 @@ const Contact: React.FC = () => {
     <div className="bg-mesh pt-32 pb-16 lg:pt-20">
       <SEO
         title="Book an Appointment | OralCare Dental Clinic Chennai"
-        description="Contact OralCare dental clinic in Chennai. Book your appointment online or visit us at Perungudi or Velachery. Call +91 99977 97777."
+        description="Contact OralCare dental clinic in Chennai. Book your appointment online or visit us at Perungudi or Velachery. Call +91 98400 12345."
       />
       <section className="py-12 lg:py-24">
         <div className="container mx-auto px-6">
@@ -43,7 +43,7 @@ const Contact: React.FC = () => {
                   <div className="w-14 h-14 bg-accent text-white rounded-2xl flex items-center justify-center shrink-0 shadow-lg shadow-accent/10"><Phone size={24} /></div>
                   <div>
                     <h4 className="font-bold text-lg lg:text-xl mb-3 text-textPrimary tracking-tight">Contact Details</h4>
-                    <p className="text-textPrimary/50 mb-1 font-bold text-sm lg:text-base">+91 99977 97777</p>
+                    <p className="text-textPrimary/50 mb-1 font-bold text-sm lg:text-base">+91 98400 12345</p>
                     <p className="text-textPrimary/50 text-sm lg:text-base font-light">luxe.dental@outlook.com</p>
                   </div>
                 </div>

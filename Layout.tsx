@@ -155,7 +155,7 @@ const Footer: React.FC = () => {
           <div className="col-span-1 md:col-span-2 lg:col-span-2">
             <h2 className="text-4xl lg:text-6xl font-serif mb-8 max-w-md leading-tight">Elite dental care, curated for you.</h2>
             <div className="flex flex-col gap-5 text-white/40">
-              <a href="tel:+919997797777" className="flex items-center gap-3 hover:text-accent transition-colors w-fit text-lg font-bold"><span className="w-1.5 h-1.5 bg-accent rounded-full" /> +91 99977 97777</a>
+              <a href="tel:+919840012345" className="flex items-center gap-3 hover:text-accent transition-colors w-fit text-lg font-bold"><span className="w-1.5 h-1.5 bg-accent rounded-full" /> +91 98400 12345</a>
               <a href="mailto:hello@oralcare.com" className="flex items-center gap-3 hover:text-accent transition-colors w-fit"><span className="w-1.5 h-1.5 bg-accent rounded-full" /> hello@oralcare.com</a>
               <p className="text-[10px] mt-4 font-black tracking-[0.3em] uppercase text-accent">Chennai • Perungudi • Velachery</p>
             </div>

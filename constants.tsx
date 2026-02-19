@@ -3,11 +3,11 @@ import React from 'react';
 import { Service, TeamMember, BlogPost } from './types';
 
 export const FOUNDER_BIO = {
-  name: 'Dr. R. Sivaranjani',
+  name: 'Dr. Olivia Martinez',
   role: 'Founder & Clinical Director',
   credentials: 'BDS, MDS (Aesthetic Dentistry)',
   philosophy: 'I believe that a smile is not just about aesthetics—it is a reflection of overall well-being and confidence.',
-  fullBio: 'With over 15 years of clinical excellence, Dr. Sivaranjani has redefined the dental experience in Chennai. Her approach combines the surgical precision of modern medicine with the artistic touch required for high-end cosmetic transformations.',
+  fullBio: 'With over 15 years of clinical excellence, Dr. Olivia Martinez has redefined the dental experience in Chennai. Her approach combines the surgical precision of modern medicine with the artistic touch required for high-end cosmetic transformations.',
   image: '/images/gallery/image-065.png',
   specialties: ['Cosmetic Smile Design', 'Advanced Implantology', 'Full Mouth Rehabilitation']
 };
@@ -78,7 +78,7 @@ export const BLOG_POSTS: BlogPost[] = [
       <p>We don't just look at teeth; we look at the whole patient. Our treatments are designed to improve your quality of life, not just your appearance.</p>
     `,
     image: '/images/blog/blog1.png',
-    author: 'Dr. Sivaranjani'
+    author: 'Dr. Olivia Martinez'
   },
   {
     id: 'nourishing-foods',
@@ -94,7 +94,7 @@ export const BLOG_POSTS: BlogPost[] = [
       <p>Calcium is the primary ingredient for preventing tooth decay, especially for growing children. Cheese and yogurt are excellent sources.</p>
     `,
     image: '/images/blog/blog2.png',
-    author: 'Dr. Sivaranjani'
+    author: 'Dr. Olivia Martinez'
   },
   {
     id: 'implants-vs-dentures',
@@ -110,16 +110,16 @@ export const BLOG_POSTS: BlogPost[] = [
       <p>Modern dentures are more comfortable and realistic than ever. They are an excellent option for non-invasive smile restoration.</p>
     `,
     image: '/images/blog/blog3.png',
-    author: 'Dr. Sivaranjani'
+    author: 'Dr. Olivia Martinez'
   },
 ];
 
 export const TEAM_DATA: TeamMember[] = [
   {
-    id: 'dr-sivaranjani',
-    name: 'Dr. R. Sivaranjani',
+    id: 'dr-olivia-martinez',
+    name: 'Dr. Olivia Martinez',
     role: 'Founder & Principal Dentist',
-    bio: 'With over 15 years of experience, Dr. Sivaranjani specializes in cosmetic transformations.',
+    bio: 'With over 15 years of experience, Dr. Olivia Martinez specializes in cosmetic transformations.',
     image: '/images/gallery/image-065.png',
     specialties: ['Cosmetic Dentistry', 'Implantology']
   }

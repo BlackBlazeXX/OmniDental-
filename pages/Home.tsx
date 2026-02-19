@@ -109,7 +109,7 @@ const Home: React.FC = () => {
     <div className="bg-white overflow-hidden">
       <SEO
         title="OralCare Dental Clinic Chennai | World-Class Cosmetic Dentistry"
-        description="Experience 15+ years of cosmetic dentistry excellence in Chennai. Dental implants, smile design, whitening & general dentistry by Dr. Sivaranjani. Book your appointment today."
+        description="Experience 15+ years of cosmetic dentistry excellence in Chennai. Dental implants, smile design, whitening & general dentistry by Dr. Olivia Martinez. Book your appointment today."
       />
       {/* Hero Section */}
       <section id="hero" className="relative min-h-[95vh] flex items-center pt-32 pb-16 lg:pt-24 overflow-hidden bg-mesh">
@@ -161,10 +161,10 @@ const Home: React.FC = () => {
             <div className="absolute -bottom-8 -left-4 lg:-bottom-12 lg:-left-12 glass p-4 lg:p-6 rounded-[2rem] lg:rounded-[3rem] shadow-2xl z-20 hidden md:block border-white/40 max-w-xs">
               <div className="flex items-center gap-4">
                 <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-2xl overflow-hidden shadow-lg shadow-primary/20 border-2 border-white">
-                  <img src={FOUNDER_BIO.image} alt="Dr. Sivaranjani" className="w-full h-full object-cover" />
+                  <img src={FOUNDER_BIO.image} alt="Dr. Olivia Martinez" className="w-full h-full object-cover" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-sm lg:text-base text-primary tracking-tight mb-1">Dr. Sivaranjani</h4>
+                  <h4 className="font-bold text-sm lg:text-base text-primary tracking-tight mb-1">Dr. Olivia Martinez</h4>
                   <p className="text-[9px] font-black text-textPrimary/30 uppercase tracking-[0.2em]">MDS (Aesthetic)</p>
                   <p className="text-[9px] text-textPrimary/50 mt-1">15+ Years Exp.</p>
                 </div>
@@ -274,12 +274,12 @@ const Home: React.FC = () => {
                 </div>
               </ScrollReveal>
               <div className="absolute -bottom-6 -right-6 lg:-bottom-10 lg:-right-10 glass p-6 lg:p-10 rounded-[2rem] lg:rounded-[3rem] shadow-xl border-white/20">
-                <p className="font-signature text-3xl lg:text-5xl text-primary">Sivaranjani</p>
+                <p className="font-signature text-3xl lg:text-5xl text-primary">Olivia Martinez</p>
                 <p className="text-[9px] font-black uppercase tracking-[0.4em] text-textPrimary/30 mt-3 lg:mt-4">Certified Clinical Master</p>
               </div>
             </div>
             <div className="text-center lg:text-left">
-              <span className="text-primary font-black tracking-[0.4em] uppercase text-[10px] mb-6 block">A Note from Dr. Sivaranjani</span>
+              <span className="text-primary font-black tracking-[0.4em] uppercase text-[10px] mb-6 block">A Note from Dr. Olivia Martinez</span>
               <h2 className="text-4xl lg:text-6xl font-serif mb-8 lg:mb-10 leading-tight">I Treat Every Patient Like <br className="hidden lg:block" /><span className="italic text-accent">Family.</span></h2>
               <p className="text-xl lg:text-2xl font-serif text-textPrimary/60 italic leading-relaxed mb-10 lg:mb-12">
                 "{FOUNDER_BIO.philosophy}"

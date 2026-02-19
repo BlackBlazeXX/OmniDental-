@@ -10,7 +10,7 @@ const Blog: React.FC = () => {
     <div className="bg-white pt-40 pb-24">
       <SEO
         title="Dental Insights & Blog | OralCare Chennai"
-        description="Read expert dental tips, oral health guides, and treatment insights from Dr. Sivaranjani and the OralCare team in Chennai."
+        description="Read expert dental tips, oral health guides, and treatment insights from Dr. Olivia Martinez and the OralCare team in Chennai."
       />
       {/* Header Section from Reference */}
       <section className="container mx-auto px-6 mb-20 lg:mb-32">
