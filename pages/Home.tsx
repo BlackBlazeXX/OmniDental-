@@ -2,9 +2,12 @@
 import React, { useState, useRef, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronRight, Star, ArrowRight, Award, Shield, Sparkles, Clock, User } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { SERVICES_DATA, FOUNDER_BIO, CLINIC_TECH, PATIENT_JOURNEY, BLOG_POSTS } from '../constants';
 import { ScrollReveal } from '../components/ScrollReveal';
 import { SEO } from '../components/SEO';
+import { TestimonialCard } from '../components/TestimonialCard';
+import { testimonials } from './Testimonials';
 
 const BeforeAfterSection: React.FC = () => {
   const [sliderPos, setSliderPos] = useState(50);
@@ -289,6 +292,69 @@ const Home: React.FC = () => {
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── Testimonials Marquee Teaser ── */}
+      <section className="py-24 lg:py-32 overflow-hidden">
+        <div className="container mx-auto px-6 mb-12 text-center">
+          <motion.span
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-[10px] font-black text-accent tracking-[0.45em] uppercase mb-4 block"
+          >
+            Patient Stories
+          </motion.span>
+          <motion.h2
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl lg:text-5xl font-serif mb-4 leading-tight"
+          >
+            Trusted by <span className="italic text-primary">Hundreds</span> of Smiles
+          </motion.h2>
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+            className="flex items-center justify-center gap-2"
+          >
+            {[1, 2, 3, 4, 5].map(i => <Star key={i} size={14} className="fill-yellow-400 text-yellow-400" />)}
+            <span className="text-xs font-bold text-textPrimary ml-1">4.9</span>
+            <span className="text-xs text-textPrimary/40">· 200+ Google Reviews</span>
+          </motion.div>
+        </div>
+
+        {/* Marquee strip */}
+        <div className="relative overflow-hidden group">
+          <div className="flex gap-4" style={{ width: 'max-content' }}>
+            <div className="flex gap-4 animate-marquee shrink-0">
+              {[...Array(3)].map((_, si) =>
+                testimonials.map((t, i) => (
+                  <TestimonialCard
+                    key={`${si}-${i}`}
+                    author={{ name: t.name, handle: t.treatment, avatar: t.image }}
+                    text={`"${t.quote}"`}
+                  />
+                ))
+              )}
+            </div>
+          </div>
+          {/* Fade edges */}
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent" />
+        </div>
+
+        <div className="text-center mt-12">
+          <Link
+            to="/testimonials"
+            className="inline-flex items-center gap-3 text-xs font-black uppercase tracking-[0.25em] text-primary border-b border-primary/20 pb-2 hover:border-primary transition-all group"
+          >
+            Read All Stories <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+          </Link>
         </div>
       </section>
 

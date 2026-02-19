@@ -22,22 +22,44 @@ const Contact: React.FC = () => {
                   <div className="w-14 h-14 bg-primary text-white rounded-2xl flex items-center justify-center shrink-0 shadow-lg shadow-primary/10"><MapPin size={24} /></div>
                   <div className="w-full">
                     <h4 className="font-bold text-lg lg:text-xl mb-3 text-textPrimary tracking-tight">Our Locations</h4>
-                    <p className="text-textPrimary/50 mb-3 leading-relaxed text-sm lg:text-base font-light">No 253, First Floor, Rajiv Gandhi Salai, Perungudi, Chennai.</p>
-                    <p className="text-textPrimary/50 leading-relaxed text-sm lg:text-base font-light mb-4">No 3, 76 A, Second Floor, Radhamohan street, Velachery, Chennai.</p>
-                    {/* Google Maps Placeholder */}
-                    <div className="w-full h-48 bg-gray-200 rounded-xl overflow-hidden mt-4">
-                      <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.882194936086!2d80.2407523750764!3d12.97939198733475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525d6d2e071727%3A0x6c90d024b3014389!2sPerungudi%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1707567890123!5m2!1sen!2sin"
-                        width="100%"
-                        height="100%"
-                        style={{ border: 0 }}
-                        allowFullScreen
-                        loading="lazy"
-                        referrerPolicy="no-referrer-when-downgrade"
-                        title="Clinic Location"
-                      ></iframe>
+
+                    {/* Perungudi Branch */}
+                    <div className="mb-6">
+                      <p className="text-[10px] font-black text-accent tracking-[0.3em] uppercase mb-1">Branch 1 — Perungudi</p>
+                      <p className="text-textPrimary/50 mb-3 text-sm font-light">No 253, First Floor, Rajiv Gandhi Salai, Perungudi, Chennai.</p>
+                      <div className="w-full h-52 rounded-2xl overflow-hidden shadow-lg border border-black/5">
+                        <iframe
+                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.882194936086!2d80.2407523750764!3d12.97939198733475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525d6d2e071727%3A0x6c90d024b3014389!2sPerungudi%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1707567890123!5m2!1sen!2sin"
+                          width="100%"
+                          height="100%"
+                          style={{ border: 0 }}
+                          allowFullScreen
+                          loading="lazy"
+                          referrerPolicy="no-referrer-when-downgrade"
+                          title="OralCare Perungudi Branch"
+                        />
+                      </div>
+                    </div>
+
+                    {/* Velachery Branch */}
+                    <div>
+                      <p className="text-[10px] font-black text-accent tracking-[0.3em] uppercase mb-1">Branch 2 — Velachery</p>
+                      <p className="text-textPrimary/50 mb-3 text-sm font-light">No 3, 76 A, Second Floor, Radhamohan Street, Velachery, Chennai.</p>
+                      <div className="w-full h-52 rounded-2xl overflow-hidden shadow-lg border border-black/5">
+                        <iframe
+                          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.9999999999995!2d80.2173!3d12.9781!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a525d5b5b5b5b5b%3A0x5b5b5b5b5b5b5b5b!2sVelachery%2C%20Chennai%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1707567890124!5m2!1sen!2sin"
+                          width="100%"
+                          height="100%"
+                          style={{ border: 0 }}
+                          allowFullScreen
+                          loading="lazy"
+                          referrerPolicy="no-referrer-when-downgrade"
+                          title="OralCare Velachery Branch"
+                        />
+                      </div>
                     </div>
                   </div>
+
                 </div>
                 <div className="flex flex-col sm:flex-row gap-6 items-center lg:items-start">
                   <div className="w-14 h-14 bg-accent text-white rounded-2xl flex items-center justify-center shrink-0 shadow-lg shadow-accent/10"><Phone size={24} /></div>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { X, ZoomIn } from 'lucide-react';
 import { SERVICES_DATA } from '../constants';
 import { SEO } from '../components/SEO';
+import ScrollExpandMedia from '../components/ScrollExpandMedia';
 
 const aboutImages = [
   { src: '/images/about/aboutsection1.png', alt: 'Our Clinic', label: 'State-of-the-Art Clinic', span: 'sm:col-span-2 sm:row-span-2' },
@@ -120,6 +121,32 @@ const About: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Scroll Expand Video Section */}
+      <ScrollExpandMedia
+        mediaType="video"
+        mediaSrc="/images/about/ClinicVedio.mp4"
+        bgImageSrc="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=1920&auto=format&fit=crop"
+        title="Our Clinic"
+        date="Est. 2009 · Chennai"
+        scrollToExpand="Scroll to explore"
+        textBlend
+      >
+        {/* Content shown after video fully expands */}
+        <div className="max-w-4xl mx-auto text-center">
+          <span className="text-[10px] font-black text-accent tracking-[0.4em] uppercase mb-4 block">World-Class Facility</span>
+          <h2 className="text-3xl lg:text-5xl font-serif mb-8 text-textPrimary leading-tight">
+            A Space Designed for <span className="italic text-primary">Your Comfort</span>
+          </h2>
+          <p className="text-lg lg:text-xl text-textPrimary/60 leading-relaxed font-light mb-6">
+            Our clinic combines state-of-the-art dental technology with a warm, welcoming environment — because great dental care starts with feeling at ease.
+          </p>
+          <p className="text-lg lg:text-xl text-textPrimary/60 leading-relaxed font-light">
+            Every treatment room is equipped with the latest tools, and every detail is designed with your experience in mind.
+          </p>
+        </div>
+      </ScrollExpandMedia>
+
     </div>
   );
 };
