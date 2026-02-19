@@ -1,0 +1,15 @@
+{
+    "name": "OralCare Premium Dental Clinic",
+    "short_name": "OralCare",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#76546A",
+    "icons": [
+        {
+            "src": "/favicon.svg",
+            "sizes": "any",
+            "type": "image/svg+xml"
+        }
+    ]
+}
