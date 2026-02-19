@@ -292,6 +292,8 @@ const Footer: React.FC = () => {
             <AnimatedContainer delay={0.2}>
               <h4 className="font-black text-[10px] uppercase tracking-[0.3em] mb-8 text-white/30">Practice</h4>
               <ul className="space-y-4 text-white/50 text-xs font-medium">
+                <li><Link to="/contact" className="hover:text-accent transition-colors">Contact</Link></li>
+                <li><Link to="/privacy" className="hover:text-accent transition-colors">Privacy Policy</Link></li>
                 <li><Link to="/" className="hover:text-accent transition-colors">Home</Link></li>
                 <li><Link to="/about" className="hover:text-accent transition-colors">The Clinic</Link></li>
                 <li><Link to="/founder" className="hover:text-accent transition-colors">The Founder</Link></li>

@@ -11,6 +11,7 @@ import Blog from './pages/Blog';
 import BlogDetail from './pages/BlogDetail';
 import Contact from './pages/Contact';
 import Testimonials from './pages/Testimonials';
+import Privacy from './pages/Privacy';
 import NotFound from './pages/NotFound';
 
 // Component to scroll to top on every route change
@@ -37,6 +38,7 @@ const App: React.FC = () => {
           <Route path="/blog/:id" element={<BlogDetail />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/testimonials" element={<Testimonials />} />
+          <Route path="/privacy" element={<Privacy />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>
