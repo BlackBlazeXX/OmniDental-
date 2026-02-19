@@ -13,7 +13,7 @@ export interface TestimonialCardProps {
     className?: string;
 }
 
-export function TestimonialCard({ author, text, href, className = '' }: TestimonialCardProps) {
+export const TestimonialCard: React.FC<TestimonialCardProps> = ({ author, text, href, className = '' }) => {
     const content = (
         <div
             className={`flex flex-col rounded-xl border border-black/8 bg-gradient-to-b from-black/[0.04] to-black/[0.01] p-4 sm:p-6 hover:from-black/[0.07] hover:to-black/[0.03] transition-colors duration-300 max-w-[320px] ${className}`}
