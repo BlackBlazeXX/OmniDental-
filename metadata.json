@@ -1,0 +1,8 @@
+{
+  "name": "OralCare Premium Dental Clinic",
+  "description": "A premium, conversion-focused dental clinic website with a clean, high-end aesthetic, featuring services, team profiles, and clinical excellence.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
