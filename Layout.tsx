@@ -65,7 +65,7 @@ const Navbar: React.FC = () => {
     { name: 'Home', path: '/', section: 'hero' },
     { name: 'About', path: '/about' },
     { name: 'Services', path: '/services', section: 'services-section' },
-    { name: 'Meet Dr. Siva', path: '/founder' },
+    { name: 'Meet Dr. Thorne', path: '/founder' },
     { name: 'Testimonials', path: '/testimonials' },
     { name: 'Success Stories', path: '/blog', section: 'blog-section' },
   ];
@@ -160,7 +160,7 @@ const Navbar: React.FC = () => {
                 const isActive = location.pathname === link.path;
                 const shortNames: Record<string, string> = {
                   'Success Stories': 'Blog',
-                  'Meet Dr. Siva': 'Dr. Siva',
+                  'Meet Dr. Thorne': 'The Architect',
                 };
                 const displayName = shortNames[link.name] || link.name;
                 return (
