@@ -15,10 +15,10 @@ const About: React.FC = () => {
   const [lightbox, setLightbox] = useState<string | null>(null);
 
   return (
-    <div className="bg-mesh pt-32 pb-16 lg:pt-20">
+    <div className="bg-[#020617] pt-32 pb-16 lg:pt-20">
       <SEO
-        title="About Us | OralCare Dental Clinic Chennai"
-        description="Learn about OralCare dental clinic in Chennai — our mission, our team, and our commitment to providing world-class dental care with a personal touch."
+        title="Architectural Philosophy | OmniDental AI"
+        description="Learn about the future of dental care. We are pioneering robotic surgical systems and AI-guided biological architecture."
       />
       {/* Lightbox Modal */}
       {lightbox && (
@@ -51,9 +51,9 @@ const About: React.FC = () => {
       <section className="py-12 lg:py-24">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto text-center mb-16 lg:mb-24">
-            <h1 className="text-4xl lg:text-6xl font-serif mb-6 lg:mb-8 text-textPrimary">About Us</h1>
-            <p className="text-xl lg:text-2xl text-textPrimary/60 leading-relaxed font-light">
-              We are committed to improving oral health with trusted dental services, modern technology, and a caring team.
+            <h1 className="text-4xl lg:text-6xl font-serif mb-6 lg:mb-8 text-white">Our Architecture</h1>
+            <p className="text-xl lg:text-2xl text-white/60 leading-relaxed font-light">
+              We architecturalize oral health through synthetic intelligence and robotic surgical precision.
             </p>
           </div>
 
@@ -95,28 +95,28 @@ const About: React.FC = () => {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             <div className="text-center lg:text-left">
-              <h2 className="text-3xl lg:text-4xl font-serif mb-6 lg:mb-8 text-textPrimary">At OralCare we think everyone should have a radiant smile.</h2>
-              <div className="space-y-6 text-textPrimary/70 text-lg leading-relaxed font-light">
-                <p>Our expert team provides tailored care in a cozy environment, utilizing cutting-edge technology to achieve the best outcomes.</p>
-                <p>We believe in transparency and patient education. Every procedure is explained in detail, and every choice is yours to make. Our goal is to create a chill dental vibe where everyone feels comfortable.</p>
+              <h2 className="text-3xl lg:text-4xl font-serif mb-6 lg:mb-8 text-white">At OmniDental we treat teeth as structural foundations.</h2>
+              <div className="space-y-6 text-white/60 text-lg leading-relaxed font-light">
+                <p>Our lab protocols provide robotic precision in a high-tech environment, utilizing neural mapping to achieve absolute outcomes.</p>
+                <p>We believe in data transparency and surgical simulation. Every movement is calculated in detail, and every result is guaranteed through AI verification.</p>
               </div>
             </div>
-            <div className="bg-white p-8 lg:p-12 rounded-[2.5rem] lg:rounded-[3rem] shadow-sm border border-black/5">
+            <div className="glass p-8 lg:p-12 rounded-[2.5rem] lg:rounded-[3rem] shadow-sm border border-white/5">
               <div className="flex flex-col sm:flex-row gap-6 items-center mb-8 text-center sm:text-left">
                 <div className="flex -space-x-4">
                   {[1, 2, 3].map(i => (
-                    <div key={i} className="w-12 h-12 rounded-full border-2 border-white bg-primary/10 flex items-center justify-center text-primary font-bold text-sm overflow-hidden">
-                      <img src={`/images/about/aboutsection${i}.png`} className="w-full h-full object-cover" alt="Patient" />
+                    <div key={i} className="w-12 h-12 rounded-full border-2 border-white/10 bg-primary/10 flex items-center justify-center text-primary font-bold text-sm overflow-hidden">
+                      <img src={`/images/about/aboutsection${i}.png`} className="w-full h-full object-cover grayscale" alt="Patient" />
                     </div>
                   ))}
-                  <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center text-xs font-bold border-2 border-white">+80</div>
+                  <div className="w-12 h-12 rounded-full bg-primary text-slate-950 flex items-center justify-center text-xs font-bold border-2 border-white/20">+80</div>
                 </div>
-                <p className="text-sm font-bold text-textPrimary">Loved by many clients, rated 4.9</p>
+                <p className="text-sm font-bold text-white">Trusted by 200+ Neural Scans</p>
               </div>
-              <blockquote className="text-xl lg:text-2xl font-serif italic mb-6 text-textPrimary">
-                "With years of experience and caring service, we focus on delivering quality dental care that prioritizes your comfort."
+              <blockquote className="text-xl lg:text-2xl font-serif italic mb-6 text-white">
+                "Our mission is to end the era of manual clinical error. We architect the future."
               </blockquote>
-              <p className="text-primary font-bold tracking-widest uppercase text-xs">Team OralCare</p>
+              <p className="text-primary font-bold tracking-widest uppercase text-xs">Team OmniDental AI</p>
             </div>
           </div>
         </div>
@@ -134,15 +134,15 @@ const About: React.FC = () => {
       >
         {/* Content shown after video fully expands */}
         <div className="max-w-4xl mx-auto text-center">
-          <span className="text-[10px] font-black text-accent tracking-[0.4em] uppercase mb-4 block">World-Class Facility</span>
-          <h2 className="text-3xl lg:text-5xl font-serif mb-8 text-textPrimary leading-tight">
-            A Space Designed for <span className="italic text-primary">Your Comfort</span>
+          <span className="text-[10px] font-black text-primary tracking-[0.4em] uppercase mb-4 block">Haptic Surgical Facility</span>
+          <h2 className="text-3xl lg:text-5xl font-serif mb-8 text-white leading-tight">
+            A Lab Designed for <span className="italic text-primary">Absolute Precision</span>
           </h2>
-          <p className="text-lg lg:text-xl text-textPrimary/60 leading-relaxed font-light mb-6">
-            Our clinic combines state-of-the-art dental technology with a warm, welcoming environment — because great dental care starts with feeling at ease.
+          <p className="text-lg lg:text-xl text-white/60 leading-relaxed font-light mb-6">
+            Our facility merges haptic surgical systems with biological dental care — because the best results come from perfect calculations.
           </p>
-          <p className="text-lg lg:text-xl text-textPrimary/60 leading-relaxed font-light">
-            Every treatment room is equipped with the latest tools, and every detail is designed with your experience in mind.
+          <p className="text-lg lg:text-xl text-white/60 leading-relaxed font-light">
+            Every surgery suite is equipped with AI-guided tools, and every micron is accounted for.
           </p>
         </div>
       </ScrollExpandMedia>

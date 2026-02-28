@@ -78,15 +78,15 @@ const Navbar: React.FC = () => {
           style={{ width: `${scrollProgress}%` }}
         />
       </div>
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${isScrolled || isMobileMenuOpen ? 'bg-white/90 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-6'}`}>
+      <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${isScrolled || isMobileMenuOpen ? 'glass border-b border-white/5 py-4' : 'bg-transparent py-6'}`}>
         <div className="container mx-auto px-6 flex justify-between items-center">
           <Link to="/" className="flex items-center gap-2 group shrink-0 relative z-50" onClick={(e) => handleNavClick(e, '/', 'hero')}>
-            <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-white font-serif text-xl group-hover:bg-accent transition-all duration-300 shadow-lg shadow-primary/10">OC</div>
-            <span className="text-2xl font-serif font-bold tracking-tight text-textPrimary">OralCare</span>
+            <div className="w-10 h-10 bg-primary rounded-xl flex items-center justify-center text-slate-950 font-serif text-xl group-hover:bg-accent transition-all duration-300 shadow-lg shadow-primary/20">OD</div>
+            <span className="text-2xl font-serif font-bold tracking-tight text-white">OmniDental<span className="text-primary italic">AI</span></span>
           </Link>
 
           {/* Desktop nav — tubelight pill style (lg+ only) */}
-          <div className="hidden lg:flex items-center gap-0.5 bg-white/10 border border-black/10 backdrop-blur-md py-1 px-1 rounded-full shadow-lg">
+          <div className="hidden lg:flex items-center gap-0.5 glass border border-white/10 py-1 px-1 rounded-full shadow-2xl">
             {navLinks.map((link) => {
               const isActive = location.pathname === link.path;
               return (
@@ -94,7 +94,7 @@ const Navbar: React.FC = () => {
                   key={link.path}
                   to={link.path}
                   onClick={(e) => handleNavClick(e, link.path, link.section)}
-                  className={`relative cursor-pointer text-[9px] font-black uppercase tracking-wider px-3.5 py-2 rounded-full transition-colors whitespace-nowrap ${isActive ? 'text-primary' : 'text-textPrimary/50 hover:text-accent'
+                  className={`relative cursor-pointer text-[9px] font-black uppercase tracking-wider px-3.5 py-2 rounded-full transition-colors whitespace-nowrap ${isActive ? 'text-primary' : 'text-white/40 hover:text-primary'
                     }`}
                 >
                   <span>{link.name}</span>
@@ -143,7 +143,7 @@ const Navbar: React.FC = () => {
             width: '100vw',
             height: '100vh',
             zIndex: 45,
-            background: '#0E1117',
+            background: '#020617',
             overflowY: 'auto',
           }}
         >
@@ -196,23 +196,21 @@ const Navbar: React.FC = () => {
             <Link
               to="/contact"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="w-full py-5 rounded-full text-xs font-black tracking-[0.25em] uppercase text-center mt-8 transition-all active:scale-95"
-              style={{ background: '#76546A', color: '#ffffff' }}
+              className="w-full py-5 rounded-full text-xs font-black tracking-[0.25em] uppercase text-center mt-8 transition-all active:scale-95 shadow-lg shadow-primary/20"
+              style={{ background: '#00D1FF', color: '#020617' }}
             >
               Book Appointment
             </Link>
 
             {/* Contact strip */}
             <div className="mt-6 flex flex-col gap-2">
-              <a href="tel:+919840012345"
-                className="text-xs font-light tracking-widest"
-                style={{ color: 'rgba(255,255,255,0.3)' }}>
-                +91 98400 12345
+              <a href="tel:+919999912345"
+                className="text-xs font-light tracking-widest hover:text-primary transition-colors text-white/40">
+                +91 99999 12345
               </a>
-              <a href="mailto:hello@oralcare.com"
-                className="text-xs font-light tracking-widest"
-                style={{ color: 'rgba(255,255,255,0.3)' }}>
-                hello@oralcare.com
+              <a href="mailto:hello@omnidental.ai"
+                className="text-xs font-light tracking-widest hover:text-primary transition-colors text-white/40">
+                hello@omnidental.ai
               </a>
             </div>
 
@@ -228,7 +226,7 @@ const Navbar: React.FC = () => {
 
       {/* ── WhatsApp Floating Button ── */}
       <a
-        href="https://wa.me/919840012345?text=Hi%2C%20I%20would%20like%20to%20book%20a%20dental%20appointment%20at%20OralCare."
+        href="https://wa.me/919840012345?text=Hi%2C%20I%20would%20like%20to%20book%20a%20dental%20appointment%20at%20OmniDental AI."
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
@@ -269,7 +267,7 @@ function AnimatedContainer({ className, delay = 0.1, children }: ViewAnimationPr
 
 const Footer: React.FC = () => {
   return (
-    <footer className="relative w-full bg-[#0A100F] text-white overflow-hidden rounded-t-[2.5rem] lg:rounded-t-[4rem] border-t border-white/5 bg-[radial-gradient(35%_128px_at_50%_0%,rgba(16,201,222,0.06),transparent)] pt-20 pb-12">
+    <footer className="relative w-full bg-[#020617] text-white overflow-hidden rounded-t-[2.5rem] lg:rounded-t-[4rem] border-t border-white/5 bg-[radial-gradient(35%_128px_at_50%_0%,rgba(0,209,255,0.06),transparent)] pt-20 pb-12">
 
       {/* Glow line at top edge */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 h-px w-1/3 bg-accent/40 rounded-full blur" />
@@ -279,11 +277,11 @@ const Footer: React.FC = () => {
 
           {/* Brand col */}
           <AnimatedContainer delay={0.1} className="col-span-1 md:col-span-2 lg:col-span-2">
-            <h2 className="text-4xl lg:text-6xl font-serif mb-8 max-w-md leading-tight">Elite dental care, curated for you.</h2>
+            <h2 className="text-4xl lg:text-6xl font-serif mb-8 max-w-md leading-tight">Elite dental care, <span className="text-primary italic">redefined.</span></h2>
             <div className="flex flex-col gap-5 text-white/40">
-              <a href="tel:+919840012345" className="flex items-center gap-3 hover:text-accent transition-colors w-fit text-lg font-bold"><span className="w-1.5 h-1.5 bg-accent rounded-full" /> +91 98400 12345</a>
-              <a href="mailto:hello@oralcare.com" className="flex items-center gap-3 hover:text-accent transition-colors w-fit"><span className="w-1.5 h-1.5 bg-accent rounded-full" /> hello@oralcare.com</a>
-              <p className="text-[10px] mt-4 font-black tracking-[0.3em] uppercase text-accent">Chennai • Perungudi • Velachery</p>
+              <a href="tel:+919999912345" className="flex items-center gap-3 hover:text-accent transition-colors w-fit text-lg font-bold"><span className="w-1.5 h-1.5 bg-accent rounded-full" /> +91 99999 12345</a>
+              <a href="mailto:hello@omnidental.ai" className="flex items-center gap-3 hover:text-accent transition-colors w-fit"><span className="w-1.5 h-1.5 bg-accent rounded-full" /> hello@omnidental.ai</a>
+              <p className="text-[10px] mt-4 font-black tracking-[0.3em] uppercase text-accent">Future City • Tech Hub • Global</p>
             </div>
           </AnimatedContainer>
 
@@ -315,7 +313,7 @@ const Footer: React.FC = () => {
 
         <AnimatedContainer delay={0.4}>
           <div className="border-t border-white/5 pt-12 flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
-            <p className="text-white/20 text-[9px] uppercase tracking-[0.4em]">© {new Date().getFullYear()} OralCare Clinic. Master Dentistry.</p>
+            <p className="text-white/20 text-[9px] uppercase tracking-[0.4em]">© {new Date().getFullYear()} OmniDental AI. Precision Architecture.</p>
             <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="flex items-center gap-2 text-[9px] font-black uppercase tracking-widest text-white/40 hover:text-accent transition-all group">
               Back to top <ArrowUp size={12} className="group-hover:-translate-y-1 transition-transform" />
             </button>
@@ -324,7 +322,7 @@ const Footer: React.FC = () => {
       </div>
 
       {/* Watermark */}
-      <div className="absolute -bottom-16 -right-16 text-[15rem] lg:text-[25rem] font-serif font-bold text-white/[0.01] select-none pointer-events-none">OC</div>
+      <div className="absolute -bottom-16 -right-16 text-[15rem] lg:text-[25rem] font-serif font-bold text-white/[0.02] select-none pointer-events-none tracking-tighter">OD</div>
     </footer>
   );
 };

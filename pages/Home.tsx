@@ -1,5 +1,5 @@
 
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useState, useRef, useCallback, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronRight, Star, ArrowRight, Award, Shield, Sparkles, Clock, User } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -32,7 +32,7 @@ const BeforeAfterSection: React.FC = () => {
   const onPointerUp = () => { isDragging.current = false; };
 
   return (
-    <section className="py-24 lg:py-32 bg-[#F4F6F3]">
+    <section className="py-24 lg:py-32 bg-[#020617] border-t border-white/5">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
 
@@ -40,32 +40,32 @@ const BeforeAfterSection: React.FC = () => {
           <div className="flex flex-col gap-8">
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-primary inline-block" />
-              <span className="text-sm font-semibold text-textPrimary/60">Why us?</span>
+              <span className="text-sm font-black text-white/40 uppercase tracking-widest">Why us?</span>
             </div>
-            <div className="w-full h-px bg-black/10" />
+            <div className="w-full h-px bg-white/10" />
             <div>
-              <h2 className="text-4xl lg:text-5xl font-serif text-textPrimary leading-tight">
+              <h2 className="text-4xl lg:text-5xl font-serif text-white leading-tight">
                 Before &amp; After Gallery
               </h2>
-              <p className="text-textPrimary/50 mt-4 font-light text-base leading-relaxed max-w-sm">
+              <p className="text-white/40 mt-4 font-light text-base leading-relaxed max-w-sm">
                 Check out our Before &amp; After Gallery, highlighting amazing smile transformations that boost confidence and dental care.
               </p>
             </div>
             <div className="flex flex-col gap-6">
               <div className="flex items-start gap-5">
-                <div className="w-14 h-14 rounded-2xl border border-black/10 bg-white flex items-center justify-center shrink-0 text-2xl shadow-sm">🩺</div>
+                <div className="w-14 h-14 rounded-2xl border border-white/10 bg-white/5 flex items-center justify-center shrink-0 text-2xl shadow-sm">🩺</div>
                 <div>
-                  <h4 className="font-bold text-textPrimary text-lg mb-1">Free Consultation</h4>
-                  <p className="text-textPrimary/50 text-sm leading-relaxed font-light">
-                    At OralCare, we've got your back! Our awesome team uses the latest techniques to get to know what you want and need.
+                  <h4 className="font-bold text-white text-lg mb-1">Free Consultation</h4>
+                  <p className="text-white/40 text-sm leading-relaxed font-light">
+                    At OmniDental AI, we've got your back! Our awesome team uses the latest techniques to get to know what you want and need.
                   </p>
                 </div>
               </div>
               <div className="flex items-start gap-5">
-                <div className="w-14 h-14 rounded-2xl border border-black/10 bg-white flex items-center justify-center shrink-0 text-2xl shadow-sm">😊</div>
+                <div className="w-14 h-14 rounded-2xl border border-white/10 bg-white/5 flex items-center justify-center shrink-0 text-2xl shadow-sm">😊</div>
                 <div>
-                  <h4 className="font-bold text-textPrimary text-lg mb-1">Smiles Made Simple!</h4>
-                  <p className="text-textPrimary/50 text-sm leading-relaxed font-light">
+                  <h4 className="font-bold text-white text-lg mb-1">Smiles Made Simple!</h4>
+                  <p className="text-white/40 text-sm leading-relaxed font-light">
                     Anxious about your dentist visit? Relax! Our friendly dentists make every appointment stress-free.
                   </p>
                 </div>
@@ -73,9 +73,9 @@ const BeforeAfterSection: React.FC = () => {
             </div>
             <Link
               to="/contact"
-              className="inline-flex items-center justify-center bg-accent text-textPrimary font-bold px-8 py-4 rounded-full text-sm hover:bg-accent/80 transition-all w-fit shadow-md hover:-translate-y-0.5 hover:shadow-lg"
+              className="inline-flex items-center justify-center bg-primary text-slate-950 font-bold px-8 py-4 rounded-full text-[10px] uppercase tracking-widest hover:bg-primary/80 transition-all w-fit shadow-xl shadow-primary/20 hover:-translate-y-0.5"
             >
-              Make an Appointment
+              Initialize Session
             </Link>
           </div>
 
@@ -108,43 +108,73 @@ const BeforeAfterSection: React.FC = () => {
 };
 
 const Home: React.FC = () => {
+  useEffect(() => {
+    // GSAP Reveal Animations
+    const gsap = (window as any).gsap;
+    const ScrollTrigger = (window as any).ScrollTrigger;
+
+    if (gsap && ScrollTrigger) {
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Hero Timeline
+      const tl = gsap.timeline({ defaults: { ease: 'power4.out', duration: 1.2 } });
+      tl.fromTo('.hero-title', { y: 60, opacity: 0 }, { y: 0, opacity: 1, delay: 0.3 })
+        .fromTo('.hero-desc', { y: 30, opacity: 0 }, { y: 0, opacity: 1 }, '-=0.9')
+        .fromTo('.hero-cta', { y: 20, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.15 }, '-=0.9')
+        .fromTo('.hero-trust', { opacity: 0 }, { opacity: 1 }, '-=0.7');
+
+      // Services Stagger
+      gsap.from('.service-card', {
+        scrollTrigger: {
+          trigger: '#services-section',
+          start: 'top 80%',
+        },
+        y: 60,
+        opacity: 0,
+        stagger: 0.15,
+        duration: 1,
+        ease: 'power3.out'
+      });
+    }
+  }, []);
+
   return (
-    <div className="bg-white overflow-hidden">
+    <div className="bg-[#020617] overflow-hidden">
       <SEO
-        title="OralCare Dental Clinic Chennai | World-Class Cosmetic Dentistry"
+        title="OmniDental AI Dental Clinic Chennai | World-Class Cosmetic Dentistry"
         description="Experience 15+ years of cosmetic dentistry excellence in Chennai. Dental implants, smile design, whitening & general dentistry by Dr. Olivia Martinez. Book your appointment today."
       />
       {/* Hero Section */}
-      <section id="hero" className="relative min-h-[95vh] flex items-center pt-32 pb-16 lg:pt-24 overflow-hidden bg-mesh">
+      <section id="hero" className="relative min-h-[95vh] flex items-center pt-32 pb-16 lg:pt-24 overflow-hidden">
         <div className="container mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           <div className="lg:col-span-7 z-10 text-center lg:text-left">
-            <h1 className="text-5xl md:text-7xl lg:text-[90px] font-serif leading-[1.1] lg:leading-[0.95] mb-8 lg:mb-12 text-textPrimary animate-fade-in" style={{ animationDelay: '0.1s' }}>
-              World-Class <br className="hidden md:block" /><span className="text-primary italic">Cosmetic Dentistry</span> in Chennai.
+            <h1 className="hero-title text-5xl md:text-7xl lg:text-[90px] font-serif leading-[1.1] lg:leading-[0.95] mb-8 lg:mb-12 text-white drop-shadow-2xl">
+              The Future of <br className="hidden md:block" /><span className="text-primary italic">Structural</span> Dentistry.
             </h1>
-            <p className="text-xl lg:text-2xl text-textPrimary/60 max-w-xl mx-auto lg:mx-0 mb-10 lg:mb-14 leading-relaxed animate-fade-in font-light" style={{ animationDelay: '0.2s' }}>
-              Orchestrating the perfect balance of health and beauty. 15+ Years of Excellence.
+            <p className="hero-desc text-xl lg:text-2xl text-white/80 max-w-xl mx-auto lg:mx-0 mb-10 lg:mb-14 leading-relaxed font-light">
+              AI-Guided Precision. Robotic Surgical Systems. Curating the next generation of dental architecture.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 lg:gap-6 animate-fade-in mb-8" style={{ animationDelay: '0.3s' }}>
-              <Link to="/contact" className="bg-primary text-white px-10 lg:px-12 py-5 lg:py-6 rounded-full font-bold text-xs uppercase tracking-[0.2em] shadow-2xl shadow-primary/30 hover:-translate-y-1 transition-all duration-300">
-                Reserve Appointment
+            <div className="hero-cta flex flex-col sm:flex-row justify-center lg:justify-start gap-4 lg:gap-6 mb-8">
+              <Link to="/contact" className="bg-primary text-slate-950 px-10 lg:px-12 py-5 lg:py-6 rounded-full font-black text-[10px] uppercase tracking-[0.2em] shadow-2xl shadow-primary/40 hover:-translate-y-1 transition-all duration-300">
+                Start Architecture
               </Link>
-              <Link to="/services" className="border border-black/10 bg-white/20 backdrop-blur-sm px-10 lg:px-12 py-5 lg:py-6 rounded-full font-bold text-xs uppercase tracking-[0.2em] hover:bg-white transition-all flex items-center justify-center gap-3">
-                Explore Treatments <ChevronRight size={18} className="text-accent" />
+              <Link to="/services" className="border border-white/20 bg-white/5 backdrop-blur-sm px-10 lg:px-12 py-5 lg:py-6 rounded-full font-black text-[10px] uppercase tracking-[0.2em] hover:bg-white/10 transition-all flex items-center justify-center gap-3 text-white">
+                Tech Stack <ChevronRight size={18} className="text-primary" />
               </Link>
             </div>
 
             {/* Trust Bar */}
-            <div className="flex flex-col lg:flex-row items-center gap-4 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+            <div className="hero-trust flex flex-col lg:flex-row items-center gap-4">
               <div className="flex items-center gap-1">
                 {[1, 2, 3, 4, 5].map((_, i) => (
-                  <Star key={i} size={16} className="text-yellow-400 fill-yellow-400" />
+                  <Star key={i} size={16} className="text-primary fill-primary" />
                 ))}
               </div>
-              <p className="text-sm font-medium text-textPrimary/60">
-                <span className="font-bold text-textPrimary">4.9/5</span> from 200+ Patients
+              <p className="text-sm font-bold text-white/80">
+                <span className="font-bold text-white">Neural Accuracy</span> Rated 99.9%
               </p>
-              <span className="hidden lg:block w-1 h-1 bg-textPrimary/20 rounded-full" />
-              <p className="text-xs uppercase tracking-widest text-textPrimary/40">Trusted by Professionals</p>
+              <span className="hidden lg:block w-1 h-1 bg-white/30 rounded-full" />
+              <p className="text-[10px] uppercase tracking-widest text-white/40 font-black">Powered by advanced AI</p>
             </div>
           </div>
 
@@ -167,9 +197,9 @@ const Home: React.FC = () => {
                   <img src={FOUNDER_BIO.image} alt="Dr. Olivia Martinez" className="w-full h-full object-cover" />
                 </div>
                 <div>
-                  <h4 className="font-bold text-sm lg:text-base text-primary tracking-tight mb-1">Dr. Olivia Martinez</h4>
-                  <p className="text-[9px] font-black text-textPrimary/30 uppercase tracking-[0.2em]">MDS (Aesthetic)</p>
-                  <p className="text-[9px] text-textPrimary/50 mt-1">15+ Years Exp.</p>
+                  <h4 className="font-bold text-sm lg:text-base text-primary tracking-tight mb-1">{FOUNDER_BIO.name}</h4>
+                  <p className="text-[9px] font-black text-white/30 uppercase tracking-[0.2em]">{FOUNDER_BIO.credentials}</p>
+                  <p className="text-[9px] text-white/50 mt-1">Chief Architect</p>
                 </div>
               </div>
             </div>
@@ -178,24 +208,24 @@ const Home: React.FC = () => {
       </section>
 
       {/* Services Section */}
-      <section id="services-section" className="py-24 lg:py-32 bg-[#F9FBFC]">
+      <section id="services-section" className="py-24 lg:py-32 bg-[#020617] border-t border-white/5">
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mb-16 lg:mb-24">
-            <p className="text-accent font-black tracking-[0.4em] uppercase text-[10px] mb-6 lg:mb-8">Our Services</p>
-            <h2 className="text-4xl lg:text-7xl font-serif text-textPrimary mb-8">Complete Smile <br className="hidden md:block" /><span className="italic">Care.</span></h2>
+            <p className="text-primary font-black tracking-[0.4em] uppercase text-[10px] mb-6 lg:mb-8">Our Services</p>
+            <h2 className="text-4xl lg:text-7xl font-serif text-white mb-8">Complete Smile <br className="hidden md:block" /><span className="italic">Care.</span></h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 lg:gap-16">
             {SERVICES_DATA.map((service, i) => (
-              <Link to={`/services/${service.id}`} key={service.id} className="group bg-white p-8 lg:p-12 rounded-[2.5rem] lg:rounded-[3rem] border border-black/5 hover:border-accent/30 transition-all shadow-sm hover:shadow-xl">
+              <Link to={`/services/${service.id}`} key={service.id} className="group glass p-8 lg:p-12 rounded-[2.5rem] lg:rounded-[3rem] border border-white/5 hover:border-primary/30 transition-all shadow-2xl">
                 <ScrollReveal width="100%" delay={0.1 * i}>
-                  <div className="aspect-[21/9] rounded-2xl overflow-hidden mb-8">
+                  <div className="aspect-[21/9] rounded-2xl overflow-hidden mb-8 grayscale group-hover:grayscale-0 transition-all duration-700">
                     <img src={service.image} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt={service.title} />
                   </div>
                 </ScrollReveal>
-                <h4 className="text-xl lg:text-2xl font-serif mb-4">{service.title}</h4>
-                <p className="text-sm text-textPrimary/40 leading-relaxed font-light mb-8">{service.shortDesc}</p>
+                <h4 className="text-xl lg:text-2xl font-serif mb-4 text-white group-hover:text-primary transition-colors">{service.title}</h4>
+                <p className="text-sm text-white/40 leading-relaxed font-light mb-8">{service.shortDesc}</p>
                 <div className="flex items-center gap-2 text-primary font-bold text-xs uppercase tracking-widest group-hover:gap-4 transition-all">
-                  Learn More <ArrowRight size={16} />
+                  Access Data <ArrowRight size={16} />
                 </div>
               </Link>
             ))}
@@ -204,52 +234,38 @@ const Home: React.FC = () => {
       </section>
 
       {/* Latest Insights (Blog Section) */}
-      <section id="blog-section" className="py-24 lg:py-32">
+      <section id="blog-section" className="py-24 lg:py-32 bg-slate-950">
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
             <div className="max-w-xl">
-              <p className="text-primary font-black tracking-[0.4em] uppercase text-[10px] mb-6">Medical Journal</p>
-              <h2 className="text-4xl lg:text-6xl font-serif text-textPrimary">Latest <span className="italic">Insights.</span></h2>
+              <p className="text-primary font-black tracking-[0.4em] uppercase text-[10px] mb-6">Structural Journal</p>
+              <h2 className="text-4xl lg:text-6xl font-serif text-white">Latest <span className="italic text-primary">Insights.</span></h2>
             </div>
-            <Link to="/blog" className="text-xs font-black uppercase tracking-[0.2em] text-primary hover:text-accent transition-colors border-b-2 border-primary/10 pb-2">
-              View All Articles
+            <Link to="/blog" className="text-xs font-black uppercase tracking-[0.2em] text-primary hover:text-white transition-colors border-b-2 border-primary/10 pb-2">
+              All Research
             </Link>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
             {BLOG_POSTS.slice(0, 3).map((post, i) => (
               <Link key={post.id} to={`/blog/${post.id}`} className="group flex flex-col">
-                <ScrollReveal width="100%" delay={0.1 * i}>
-                  <div className="relative aspect-[16/9] rounded-[2rem] overflow-hidden mb-6 shadow-lg">
-                    <img
-                      src={post.image}
-                      className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105 group-hover:blur-[3px] group-hover:brightness-75"
-                      alt={post.title}
-                    />
-                    {/* Read More overlay */}
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                      <span
-                        className="text-3xl lg:text-4xl font-serif font-light tracking-wide select-none"
-                        style={{
-                          color: '#ffffff',
-                          textShadow: '0 2px 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.5)',
-                          WebkitTextFillColor: '#ffffff',
-                        }}
-                      >
-                        Read More
-                      </span>
-                    </div>
+                <div className="relative aspect-[16/9] rounded-[2rem] overflow-hidden mb-6 shadow-2xl border border-white/5">
+                  <img
+                    src={post.image}
+                    className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105 group-hover:blur-[3px] group-hover:brightness-50 grayscale hover:grayscale-0"
+                    alt={post.title}
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <span className="text-lg font-black uppercase tracking-[0.3em] text-white">View Case</span>
                   </div>
-                </ScrollReveal>
-                <div className="flex items-center gap-3 mb-3 text-[10px] font-black uppercase tracking-widest text-textPrimary/30">
-                  <span className="flex items-center gap-1.5"><Clock size={12} /> {post.date}</span>
-                  <span className="w-1 h-1 bg-accent rounded-full" />
-                  <span className="flex items-center gap-1.5"><User size={12} /> {post.author}</span>
                 </div>
-                <h3 className="text-xl lg:text-2xl font-serif mb-3 group-hover:text-primary transition-colors text-textPrimary leading-tight">
+                <div className="flex items-center gap-3 mb-3 text-[10px] font-black uppercase tracking-widest text-white/30">
+                  <span className="flex items-center gap-1.5"><Clock size={12} /> {post.date}</span>
+                </div>
+                <h3 className="text-xl lg:text-2xl font-serif mb-3 group-hover:text-primary transition-colors text-white leading-tight">
                   {post.title}
                 </h3>
-                <p className="text-sm text-textPrimary/50 leading-relaxed font-light line-clamp-2">
+                <p className="text-sm text-white/40 leading-relaxed font-light line-clamp-2">
                   {post.excerpt}
                 </p>
               </Link>
@@ -262,33 +278,31 @@ const Home: React.FC = () => {
       <BeforeAfterSection />
 
       {/* Founder Spotlight */}
-      <section id="founder-section" className="py-24 lg:py-32 bg-primary/5">
+      <section id="founder-section" className="py-24 lg:py-32 bg-primary/5 border-y border-white/5">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
             <div className="relative max-w-lg mx-auto lg:max-w-none">
-              <ScrollReveal width="100%">
-                <div className="aspect-[4/5] rounded-[3rem] lg:rounded-[4rem] overflow-hidden shadow-2xl">
-                  <img
-                    src={FOUNDER_BIO.image}
-                    className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-[2s]"
-                    alt="Founder"
-                    loading="lazy"
-                  />
-                </div>
-              </ScrollReveal>
-              <div className="absolute -bottom-6 -right-6 lg:-bottom-10 lg:-right-10 glass p-6 lg:p-10 rounded-[2rem] lg:rounded-[3rem] shadow-xl border-white/20">
-                <p className="font-signature text-3xl lg:text-5xl text-primary">Olivia Martinez</p>
-                <p className="text-[9px] font-black uppercase tracking-[0.4em] text-textPrimary/30 mt-3 lg:mt-4">Certified Clinical Master</p>
+              <div className="aspect-[4/5] rounded-[3rem] lg:rounded-[4rem] overflow-hidden shadow-2xl border border-white/10">
+                <img
+                  src={FOUNDER_BIO.image}
+                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-[2s]"
+                  alt="Founder"
+                  loading="lazy"
+                />
+              </div>
+              <div className="absolute -bottom-6 -right-6 lg:-bottom-10 lg:-right-10 glass p-6 lg:p-10 rounded-[2rem] lg:rounded-[3rem] shadow-xl border-white/10">
+                <p className="font-serif font-black uppercase tracking-tighter text-3xl lg:text-5xl text-primary">Xavier Thorne</p>
+                <p className="text-[9px] font-black uppercase tracking-[0.4em] text-white/30 mt-3 lg:mt-4">Certified Precision Architect</p>
               </div>
             </div>
             <div className="text-center lg:text-left">
-              <span className="text-primary font-black tracking-[0.4em] uppercase text-[10px] mb-6 block">A Note from Dr. Olivia Martinez</span>
-              <h2 className="text-4xl lg:text-6xl font-serif mb-8 lg:mb-10 leading-tight">I Treat Every Patient Like <br className="hidden lg:block" /><span className="italic text-accent">Family.</span></h2>
-              <p className="text-xl lg:text-2xl font-serif text-textPrimary/60 italic leading-relaxed mb-10 lg:mb-12">
+              <span className="text-primary font-black tracking-[0.4em] uppercase text-[10px] mb-6 block">Structural Manifesto</span>
+              <h2 className="text-4xl lg:text-6xl font-serif mb-8 lg:mb-10 leading-tight text-white">Precision is not <br className="hidden lg:block" /><span className="italic text-primary">Optional.</span></h2>
+              <p className="text-xl lg:text-2xl font-serif text-white/60 italic leading-relaxed mb-10 lg:mb-12">
                 "{FOUNDER_BIO.philosophy}"
               </p>
-              <Link to="/founder" className="inline-flex items-center gap-4 text-xs font-bold uppercase tracking-[0.3em] text-primary border-b border-primary/20 pb-2 hover:border-primary transition-all group">
-                Read the Full Story <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
+              <Link to="/founder" className="inline-flex items-center gap-4 text-xs font-bold uppercase tracking-[0.3em] text-primary border-b border-white/10 pb-2 hover:border-primary transition-all group">
+                Handoff Specs <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
               </Link>
             </div>
           </div>
@@ -311,7 +325,7 @@ const Home: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-4xl lg:text-5xl font-serif mb-4 leading-tight"
+            className="text-4xl lg:text-5xl font-serif mb-4 leading-tight text-white"
           >
             Trusted by <span className="italic text-primary">Hundreds</span> of Smiles
           </motion.h2>
@@ -322,9 +336,9 @@ const Home: React.FC = () => {
             transition={{ delay: 0.2 }}
             className="flex items-center justify-center gap-2"
           >
-            {[1, 2, 3, 4, 5].map(i => <Star key={i} size={14} className="fill-yellow-400 text-yellow-400" />)}
-            <span className="text-xs font-bold text-textPrimary ml-1">4.9</span>
-            <span className="text-xs text-textPrimary/40">· 200+ Google Reviews</span>
+            {[1, 2, 3, 4, 5].map(i => <Star key={i} size={14} className="fill-primary text-primary" />)}
+            <span className="text-xs font-bold text-white ml-1">4.9</span>
+            <span className="text-xs text-white/40">· 200+ Google Reviews</span>
           </motion.div>
         </div>
 
@@ -344,8 +358,8 @@ const Home: React.FC = () => {
             </div>
           </div>
           {/* Fade edges */}
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-[#020617] to-transparent" />
+          <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-[#020617] to-transparent" />
         </div>
 
         <div className="text-center mt-12">
@@ -361,21 +375,21 @@ const Home: React.FC = () => {
       {/* Concierge CTA Section */}
       <section className="py-24 lg:py-32">
         <div className="container mx-auto px-6">
-          <div className="bg-[#0A100F] rounded-[3rem] lg:rounded-[5rem] p-10 md:p-16 lg:p-32 text-center relative overflow-hidden group shadow-2xl">
+          <div className="bg-[#020617] rounded-[3rem] lg:rounded-[5rem] p-10 md:p-16 lg:p-32 text-center relative overflow-hidden group shadow-2xl border border-white/5">
             <div className="relative z-10 max-w-4xl mx-auto">
-              <Sparkles className="text-accent mx-auto mb-8 lg:mb-10 opacity-60" size={40} />
-              <h2 className="text-4xl lg:text-8xl font-serif text-white mb-8 lg:mb-12 leading-[1.1] lg:leading-[0.9]">Experience the <br className="lg:hidden" /><span className="text-accent italic">Concierge Service.</span></h2>
-              <p className="text-white/40 text-lg lg:text-xl mb-12 lg:mb-16 font-light tracking-wide">Join a practice where you are not a patient, but a curated guest.</p>
+              <Sparkles className="text-primary mx-auto mb-8 lg:mb-10 opacity-80" size={40} />
+              <h2 className="text-4xl lg:text-8xl font-serif text-white mb-8 lg:mb-12 leading-[1.1] lg:leading-[0.9]">Upgrade Your <br className="lg:hidden" /><span className="text-primary italic">Biological Specs.</span></h2>
+              <p className="text-white/40 text-lg lg:text-xl mb-12 lg:mb-16 font-light tracking-wide">Enter the future of dental care. We are not just surgeons; we are architects.</p>
               <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-4 lg:gap-8">
-                <Link to="/contact" className="bg-accent text-black px-10 lg:px-14 py-5 lg:py-7 rounded-full font-bold text-[11px] uppercase tracking-[0.3em] hover:scale-105 transition-all shadow-xl shadow-accent/10">
-                  Reserve My Suite
+                <Link to="/contact" className="bg-primary text-slate-950 px-10 lg:px-14 py-5 lg:py-7 rounded-full font-bold text-[11px] uppercase tracking-[0.3em] hover:scale-105 transition-all shadow-xl shadow-primary/20">
+                  Book Neural Scan
                 </Link>
-                <a href="tel:+919997797777" className="px-10 lg:px-14 py-5 lg:py-7 rounded-full border border-white/20 text-white font-bold text-[11px] uppercase tracking-[0.3em] hover:bg-white/5 transition-colors">
+                <a href="tel:+919999912345" className="px-10 lg:px-14 py-5 lg:py-7 rounded-full border border-white/10 text-white font-bold text-[11px] uppercase tracking-[0.3em] hover:bg-white/5 transition-colors">
                   Speak to an Expert
                 </a>
               </div>
             </div>
-            <div className="absolute top-0 right-0 w-[300px] lg:w-[500px] h-[300px] lg:h-[500px] bg-primary/10 rounded-full blur-[100px] lg:blur-[150px] -translate-y-1/2 translate-x-1/2" />
+            <div className="absolute top-0 right-0 w-[300px] lg:w-[500px] h-[300px] lg:h-[500px] bg-primary/5 rounded-full blur-[100px] lg:blur-[150px] -translate-y-1/2 translate-x-1/2" />
           </div>
         </div>
       </section>

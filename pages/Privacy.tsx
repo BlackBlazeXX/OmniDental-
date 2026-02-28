@@ -4,20 +4,20 @@ import { SEO } from '../components/SEO';
 
 const Privacy: React.FC = () => {
     return (
-        <div className="pt-40 pb-20 bg-white">
+        <div className="pt-40 pb-20 bg-[#020617] selection:bg-primary selection:text-slate-950">
             <SEO
-                title="Privacy Policy | OralCare"
+                title="Privacy Policy | OmniDental AI"
                 description="Our commitment to protecting your personal and medical data."
             />
             <div className="container mx-auto px-6 max-w-4xl">
-                <h1 className="text-4xl md:text-5xl font-serif mb-8 text-primary">Privacy Policy</h1>
-                <p className="text-sm text-textPrimary/40 mb-12">Last Updated: February 2026</p>
+                <h1 className="text-4xl md:text-5xl font-serif mb-8 text-primary">Privacy Protocol</h1>
+                <p className="text-sm text-white/40 mb-12 uppercase tracking-widest font-black">Last Sync: February 2026</p>
 
-                <div className="prose prose-lg text-textPrimary/70">
-                    <h3 className="text-xl font-serif text-textPrimary mt-8 mb-4">1. Information We Collect</h3>
+                <div className="prose prose-lg prose-invert text-white/60">
+                    <h3 className="text-xl font-serif text-white mt-8 mb-4">1. Information We Collect</h3>
                     <p className="mb-4">We collect information you provide directly to us when you book an appointment, including your name, phone number, and treatment preferences.</p>
 
-                    <h3 className="text-xl font-serif text-textPrimary mt-8 mb-4">2. How We Use Information</h3>
+                    <h3 className="text-xl font-serif text-white mt-8 mb-4">2. How We Use Information</h3>
                     <p className="mb-4">We use your information to:
                         <ul className="list-disc pl-5 mt-2 space-y-2">
                             <li>Schedule and confirm your appointments.</li>
@@ -26,11 +26,11 @@ const Privacy: React.FC = () => {
                         </ul>
                     </p>
 
-                    <h3 className="text-xl font-serif text-textPrimary mt-8 mb-4">3. Data Protection</h3>
+                    <h3 className="text-xl font-serif text-white mt-8 mb-4">3. Data Protection</h3>
                     <p className="mb-4">We implement security measures to maintain the safety of your personal information. Your medical records are kept strictly confidential in accordance with Indian Medical Council regulations.</p>
 
-                    <h3 className="text-xl font-serif text-textPrimary mt-8 mb-4">4. Contact Us</h3>
-                    <p className="mb-4">If you have any questions about this privacy policy, please contact us at hello@oralcare.com.</p>
+                    <h3 className="text-xl font-serif text-white mt-8 mb-4">4. Contact Us</h3>
+                    <p className="mb-4">If you have any questions about this privacy policy, please contact us at hello@omnidental.ai.</p>
                 </div>
             </div>
         </div>

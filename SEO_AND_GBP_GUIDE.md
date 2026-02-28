@@ -11,7 +11,7 @@
 
 ### Step 1: Claim & Verify
 1.  Go to **[google.com/business](https://google.com/business)**.
-2.  Search for "OralCare" (or the client's actual name).
+2.  Search for "OmniDental AI" (or the client's actual name).
     *   If it exists: Click "Claim this business."
     *   If not: Click "Add your business to Google."
 3.  **Category:** Choose `Dental Clinic` (Primary) and `Cosmetic Dentist` (Secondary).
@@ -40,8 +40,8 @@
 
 ### Step 1: Update Title Tags & Meta Descriptions
 Go to [index.html](file:///c:/Users/LENOVO/Downloads/dental%20clinic/index.html) and update the `<title>` and `<meta name="description">`.
-*   **Bad Title:** `Home | OralCare`
-*   **Good Title:** `Best Cosmetic Dentist in Perungudi, Chennai | OralCare Clinic`
+*   **Bad Title:** `Home | OmniDental AI`
+*   **Good Title:** `Best Cosmetic Dentist in Perungudi, Chennai | OmniDental AI Clinic`
 *   **Meta Description:** `Dr. Sivaranjani specializes in Pain-Free Veneers, Implants, and Smile Makeovers in Chennai. 15+ Years Exp. Book a Consultation: +91 99977 97777.`
 
 ### Step 2: Image Alt Text
@@ -62,14 +62,14 @@ Go to [index.html](file:///c:/Users/LENOVO/Downloads/dental%20clinic/index.html)
 
 You need to send them a **PDF Report** to justify the ₹15,000 invoice. Use this template:
 
-> **Subject: SEO Setup Complete - OralCare Digital Launch**
+> **Subject: SEO Setup Complete - OmniDental AI Digital Launch**
 >
 > Dear Dr. Sivaranjani,
 >
 > We have successfully deployed your Local SEO foundation. Here is what we accomplished:
 >
 > **1. Google Maps Optimization:**
-> *   ✅ Claimed & Verified "OralCare Premium Dental".
+> *   ✅ Claimed & Verified "OmniDental AI Premium Dental".
 > *   ✅ Optimized photo gallery with geo-tagged images.
 > *   ✅ Listed 10 key services (Veneers, Implants) in the Business Profile.
 >

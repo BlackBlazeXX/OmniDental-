@@ -1,4 +1,4 @@
-# 🦷 OralCare Premium Dental Website — Complete Guide
+# 🦷 OmniDental AI Premium Dental Website — Complete Guide
 
 > This README explains **everything** — how to run the website, how to edit text, how to change images, how to update colors, and how to connect a real backend. Written so anyone can understand it, even without a coding background.
 
@@ -79,7 +79,7 @@ Search (`Ctrl + F`) for the text you want to change. For example:
 ```typescript
 // Find this and change the values:
 export const CLINIC_INFO = {
-  name: "OralCare",
+  name: "OmniDental AI",
   phone: "+91 98400 12345",      ← Change to real phone number
   email: "hello@oralcare.com",   ← Change to real email
   address1: "No 253, First Floor, Rajiv Gandhi Salai, Perungudi, Chennai.",

@@ -4,30 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OralCare | Premium Dental Excellence</title>
+    <title>OmniDental AI | Future of Dentistry</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="description"
-        content="Chennai's premier dental clinic for cosmetic dentistry, implants, and smile makeovers.">
-    <meta name="theme-color" content="#76546A">
+        content="Precision robotic dentistry and AI-guided smile transformations. Experience the future of dental care.">
+    <meta name="theme-color" content="#00D1FF">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,700&family=Dancing+Script:wght@400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#76546A',
-                        accent: '#10C9DE',
-                        highlight: '#CAE5ED',
-                        textPrimary: '#121212',
+                        primary: '#00D1FF',
+                        accent: '#3B82F6',
+                        highlight: '#0F172A',
+                        textPrimary: '#F8FAFC',
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
-                        signature: ['Dancing Script', 'cursive'],
+                        serif: ['Space Grotesk', 'sans-serif'],
+                        tech: ['Space Grotesk', 'sans-serif'],
                     },
                     animation: {
                         'fade-in': 'fadeIn 0.8s ease-out forwards',
@@ -59,37 +61,38 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            color: #121212;
+            color: #F8FAFC;
+            background-color: #020617;
             overflow-x: hidden;
         }
 
-        /* Premium Custom Scrollbar */
+        /* Premium Custom Scrollbar - Cyberpunk Cyan */
         ::-webkit-scrollbar {
-            width: 6px;
+            width: 4px;
         }
 
         ::-webkit-scrollbar-track {
-            background: #f9f9f9;
+            background: #020617;
         }
 
         ::-webkit-scrollbar-thumb {
-            background: #76546A;
+            background: #00D1FF;
             border-radius: 10px;
         }
 
         ::-webkit-scrollbar-thumb:hover {
-            background: #10C9DE;
+            background: #3B82F6;
         }
 
         .bg-mesh {
             background: radial-gradient(at 0% 0%, rgba(202, 229, 237, 0.3) 0, transparent 50%), radial-gradient(at 100% 0%, rgba(118, 84, 106, 0.05) 0, transparent 50%);
         }
 
-        /* Glassmorphism utility */
+        /* Glassmorphism utility - Dark Theme */
         .glass {
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(15, 23, 42, 0.6);
             backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         /* Testimonials marquee */
@@ -125,7 +128,7 @@
     <link rel="stylesheet" href="/index.css">
 </head>
 
-<body class="bg-white selection:bg-highlight selection:text-primary">
+<body class="bg-[#020617] selection:bg-primary/20 selection:text-primary">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
 </body>

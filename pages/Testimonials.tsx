@@ -15,7 +15,7 @@ type Testimonial = {
 
 const testimonials: Testimonial[] = [
     {
-        quote: "I came in with severe dental anxiety and left as a loyal patient. Dr. Siva's team made every step calm and painless. My smile has completely transformed!",
+        quote: "The structural integrity of my implants is absolute. Dr. Thorne's robotic system achieved a level of precision I didn't think possible. The future is here.",
         name: 'Priya Ramesh',
         role: 'Software Engineer',
         treatment: 'Smile Design',
@@ -29,7 +29,7 @@ const testimonials: Testimonial[] = [
         image: 'https://randomuser.me/api/portraits/men/45.jpg',
     },
     {
-        quote: "The whitening treatment was incredible — 8 shades lighter in one session! The clinic is spotless and the staff are so welcoming.",
+        quote: "The AI Smile Design protocol was incredible — seeing the simulation before the procedure gave me absolute confidence. The results are mathematically perfect.",
         name: 'Ananya Krishnan',
         role: 'Fashion Designer',
         treatment: 'Smile Whitening',
@@ -43,7 +43,7 @@ const testimonials: Testimonial[] = [
         image: 'https://randomuser.me/api/portraits/men/47.jpg',
     },
     {
-        quote: "After a root canal elsewhere went wrong, OralCare fixed everything. Truly world-class expertise and the kindest staff.",
+        quote: "After a complex surgical failure elsewhere, OmniDental's robotic repair saved my oral architecture. Truly world-class expertise.",
         name: 'Deepa Nair',
         role: 'School Principal',
         treatment: 'Root Canal Therapy',
@@ -71,10 +71,10 @@ const testimonials: Testimonial[] = [
         image: 'https://randomuser.me/api/portraits/men/51.jpg',
     },
     {
-        quote: "The entire team remembers your name and your history. You truly feel like a VIP guest, not just another patient number.",
+        quote: "The neural scan was painless and the data visualization of my future smile was breathtaking. You aren't just a patient, you are a priority.",
         name: 'Lakshmi Balaji',
-        role: 'Homemaker',
-        treatment: 'General Dentistry',
+        role: 'Data Analyst',
+        treatment: 'Neural Mapping',
         image: 'https://randomuser.me/api/portraits/women/52.jpg',
     },
 ];
@@ -82,10 +82,10 @@ const testimonials: Testimonial[] = [
 // Full Testimonials Page
 const Testimonials: React.FC = () => {
     return (
-        <div className="bg-mesh pt-32 pb-24 min-h-screen">
+        <div className="bg-[#020617] pt-32 pb-24 min-h-screen">
             <SEO
-                title="Patient Testimonials | OralCare Clinic"
-                description="Read real stories from real OralCare patients. Smile design, implants, whitening — see why Chennai trusts us."
+                title="Surgical Outcomes | OmniDental AI"
+                description="Read real data from real OmniDental patients. Robotic surgical outcomes and AI-guided architectural repairs."
             />
 
             {/* Hero */}
@@ -94,26 +94,26 @@ const Testimonials: React.FC = () => {
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="text-[10px] font-black text-accent tracking-[0.45em] uppercase mb-5 block"
+                    className="text-[10px] font-black text-primary tracking-[0.45em] uppercase mb-5 block"
                 >
-                    Real Patients — Real Results
+                    Verified Outcomes — Clinical Data
                 </motion.span>
                 <motion.h1
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.1 }}
-                    className="text-5xl lg:text-7xl font-serif leading-tight mb-6"
+                    className="text-5xl lg:text-7xl font-serif leading-tight mb-6 text-white"
                 >
-                    Real Smiles, <br />
-                    <span className="italic text-primary">Real Voices.</span>
+                    Precision Results, <br />
+                    <span className="italic text-primary">Absolute Truth.</span>
                 </motion.h1>
                 <motion.p
                     initial={{ opacity: 0, y: 15 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    className="text-textPrimary/50 max-w-xl mx-auto text-lg font-light leading-relaxed"
+                    className="text-white/40 max-w-xl mx-auto text-lg font-light leading-relaxed"
                 >
-                    Every smile here has a story. Browse the experiences of patients who trusted OralCare with their most important asset.
+                    Every outcome here is backed by data. Browse the transmissions of patients who upgraded their biological architecture with OmniDental.
                 </motion.p>
 
                 {/* Google Rating Badge */}
@@ -121,13 +121,13 @@ const Testimonials: React.FC = () => {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: 0.3 }}
-                    className="inline-flex items-center gap-3 mt-10 bg-white border border-black/8 rounded-full px-6 py-3 shadow-sm"
+                    className="inline-flex items-center gap-3 mt-10 glass border border-white/10 rounded-full px-6 py-3 shadow-2xl"
                 >
                     <div className="flex gap-0.5">
-                        {[1, 2, 3, 4, 5].map(i => <Star key={i} size={16} className="fill-yellow-400 text-yellow-400" />)}
+                        {[1, 2, 3, 4, 5].map(i => <Star key={i} size={16} className="fill-primary text-primary" />)}
                     </div>
-                    <span className="text-sm font-bold text-textPrimary">4.9</span>
-                    <span className="text-xs text-textPrimary/40 font-medium">200+ Google Reviews</span>
+                    <span className="text-sm font-bold text-white">4.9/5.0</span>
+                    <span className="text-xs text-white/40 font-medium">99.9% Success Rate</span>
                 </motion.div>
             </section>
 
@@ -141,24 +141,24 @@ const Testimonials: React.FC = () => {
                             whileInView={{ filter: 'blur(0px)', translateY: 0, opacity: 1 }}
                             viewport={{ once: true }}
                             transition={{ delay: 0.08 * index, duration: 0.7 }}
-                            className="relative grid grid-cols-[auto_1fr] gap-x-3 overflow-hidden border border-dashed border-black/20 p-5 bg-white/60 backdrop-blur-sm hover:bg-white/90 transition-colors duration-300"
+                            className="relative grid grid-cols-[auto_1fr] gap-x-3 overflow-hidden border border-dashed border-white/10 p-5 glass hover:bg-white/5 transition-colors duration-300"
                         >
                             {/* Subtle grid overlay */}
-                            <div className="pointer-events-none absolute inset-0 opacity-20 [background-image:linear-gradient(rgba(0,0,0,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.05)_1px,transparent_1px)] [background-size:24px_24px]" />
+                            <div className="pointer-events-none absolute inset-0 opacity-10 [background-image:linear-gradient(rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.05)_1px,transparent_1px)] [background-size:24px_24px]" />
 
                             <img
                                 alt={name}
                                 src={image}
                                 loading="lazy"
-                                className="size-10 rounded-full object-cover self-start mt-0.5"
+                                className="size-10 rounded-full object-cover self-start mt-0.5 grayscale"
                             />
                             <div>
-                                <p className="text-sm font-semibold text-textPrimary">{name}</p>
-                                <span className="text-[11px] text-textPrimary/40 font-light tracking-tight block">
-                                    {role} {'·'} <span className="text-accent font-medium">{treatment}</span>
+                                <p className="text-sm font-semibold text-white">{name}</p>
+                                <span className="text-[11px] text-white/40 font-light tracking-tight block">
+                                    {role} {'·'} <span className="text-primary font-medium">{treatment}</span>
                                 </span>
                                 <blockquote className="mt-3">
-                                    <p className="text-sm font-light tracking-wide text-textPrimary/70 leading-relaxed">
+                                    <p className="text-sm font-light tracking-wide text-white/60 leading-relaxed">
                                         {'“'}{quote}{'”'}
                                     </p>
                                 </blockquote>
@@ -176,17 +176,17 @@ const Testimonials: React.FC = () => {
                 transition={{ duration: 0.6 }}
                 className="container mx-auto px-6 text-center mt-24"
             >
-                <h2 className="text-3xl lg:text-5xl font-serif mb-6 leading-tight">
-                    Ready to write <span className="italic text-primary">your story?</span>
+                <h2 className="text-3xl lg:text-5xl font-serif mb-6 leading-tight text-white">
+                    Ready to architect <span className="italic text-primary">your future?</span>
                 </h2>
-                <p className="text-textPrimary/50 mb-10 max-w-md mx-auto">
-                    Join hundreds of patients who have transformed their smiles and their confidence at OralCare.
+                <p className="text-white/40 mb-10 max-w-md mx-auto">
+                    Join hundreds of patients who have upgraded their biological assets at OmniDental.
                 </p>
                 <Link
                     to="/contact"
-                    className="inline-flex items-center gap-3 bg-primary text-white px-10 py-5 rounded-full font-black text-[11px] uppercase tracking-[0.25em] hover:bg-primary/90 transition-all shadow-xl shadow-primary/20 hover:-translate-y-0.5 group"
+                    className="inline-flex items-center gap-3 bg-primary text-slate-950 px-10 py-5 rounded-full font-black text-[11px] uppercase tracking-[0.25em] hover:bg-primary/90 transition-all shadow-xl shadow-primary/20 hover:-translate-y-0.5 group"
                 >
-                    Book Your Consultation
+                    Initialize Consultation
                     <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                 </Link>
             </motion.section>
